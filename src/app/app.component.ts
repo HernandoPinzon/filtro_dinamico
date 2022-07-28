@@ -29,7 +29,6 @@ export class AppComponent {
       })
       this.users = this.originalUsers.map(user => user)
       this.showData();
-      console.log(response);
     })
   }
 
@@ -56,8 +55,6 @@ export class AppComponent {
       if (this.selectedStatus != "all" && this.selectedGender == "all") {
         return user.status == this.selectedStatus
       }
-
-      console.log("entre al final")
 
       return user.status === this.selectedStatus && user.gender === this.selectedGender;
       
