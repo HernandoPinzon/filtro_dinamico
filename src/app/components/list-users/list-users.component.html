@@ -1,0 +1,58 @@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.status}}</td>
+        </tr>
+    </tbody>
+    
+    <!-- <table>
+        <tr *ngFor="let item of users">
+          <td>{{item}}</td>
+          </tr>
+      </table> -->
+
+    <!-- <tr >
+        <td>user.username</td>
+        <td>user.email</td>
+        <td>user.subject</td>
+        <td>user.customerSatisfaction</td>
+        <td>user.priority</td>
+        <td>user.status</td>
+    </tr>
+    <tr >
+        <td>user.username</td>
+        <td>user.email</td>
+        <td>user.subject</td>
+        <td>user.customerSatisfaction</td>
+        <td>user.priority</td>
+        <td>user.status</td>
+    </tr>
+    <tr >
+        <td>user.username</td>
+        <td>user.email</td>
+        <td>user.subject</td>
+        <td>user.customerSatisfaction</td>
+        <td>user.priority</td>
+        <td>user.status</td>
+    </tr>
+    <tr >
+        <td>user.username</td>
+        <td>user.email</td>
+        <td>user.subject</td>
+        <td>user.customerSatisfaction</td>
+        <td>user.priority</td>
+        <td>user.status</td>
+    </tr> -->
+</table>
