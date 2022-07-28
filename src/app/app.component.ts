@@ -42,17 +42,27 @@ export class AppComponent {
   }
 
   public addFilter(){
-    this.users= this.originalUsers.filter(user => {
-      if (this.selectedGender != "all") 
-      return user.status == this.selectedStatus
-        
-      if (this.selectedStatus != "all") 
-      return user.gender == this.selectedGender 
-
-      return true;
-    })
     console.log(this.selectedStatus)
-    console.log(this.users)
+    this.users= this.originalUsers.filter(user => {
+
+      if(this.selectedStatus == "all" && this.selectedGender == "all"){
+        return true
+      }
+
+      if (this.selectedGender != "all" && this.selectedStatus == "all") {
+        return user.gender == this.selectedGender
+      }
+        
+      if (this.selectedStatus != "all" && this.selectedGender == "all") {
+        return user.status == this.selectedStatus
+      }
+
+      console.log("entre al final")
+
+      return user.status === this.selectedStatus && user.gender === this.selectedGender;
+      
+    })
+    
   }
 
   onChangeGenre($event:any){
