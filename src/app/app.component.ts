@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from './models/user';
-import { ApicallerService } from './services/apicaller.service';
+import { ApiCallerService } from './services/apicaller.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
   selectedStatus = "all";
   originalUsers: Array<User> = []
   users: Array<User> =  []
-  constructor(private apiCaller: ApicallerService) {
+  constructor(private apiCaller: ApiCallerService) {
 
   }
 
@@ -41,17 +41,13 @@ export class AppComponent {
     this.showList= true
   }
 
-  public hideData(){
-    //this.showList= false
-  }
-
   public addFilter(){
     this.users= this.originalUsers.filter(user => {
       if (this.selectedGender != "all") 
-      return user.status == this.selectedStatus && user.gender == this.selectedGender
+      return user.status == this.selectedStatus
         
       if (this.selectedStatus != "all") 
-      return /* user.gender == this.selectedGender && */ user.status == this.selectedStatus
+      return user.gender == this.selectedGender 
 
       return true;
     })
